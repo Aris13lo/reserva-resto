@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../css/navbar.css";
 
-const NavbarApp = ({ cerrarSesion, user }) => {
+const NavbarApp = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container">
