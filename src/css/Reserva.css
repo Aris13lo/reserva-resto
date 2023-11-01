@@ -13,7 +13,7 @@ body {
 
 .banner{
     min-height:100vh;
-    /* background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("fondo.jpeg") center/cover no-repeat; */
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("../assets/fondo.jpg") center/cover no-repeat;
     display: flex;
     flex-direction:column;
     justify-content:center;
@@ -27,15 +27,10 @@ body {
     grid-template-columns: 420px 420px;
 }
 
-/* .card-img {
-    background: url("tres.jpg") center/cover no-repeat;
-} */
-
-.banner h2 {
-    padding-bottom:40px;
-    margin-bottom:20px;
-    
+.card-img {
+    background: url("../assets/tres.jpg") center/cover no-repeat;
 }
+
 
 .card-contenido {
     background:#fff;
@@ -61,7 +56,6 @@ form select, form input {
     margin:15px 12px;
     padding: 5px;
     font-family:'Poppins', sans-serif;
-    outline:none;
     border: none;
     border-bottom: 1px solid #eee;
     font-weight:300;
@@ -79,7 +73,7 @@ color: #5f5e5e;
 
 form input[type = submit] {
     color: #fff;
-    background: rgb(209, 7, 175);
+    background: #967f00;
     padding: 12px 0;
     border-radius: 4px;
     cursor:pointer;
@@ -95,6 +89,14 @@ form input[type = submit]:hover{
     /* grid-template-columns: 410px 410px; */
     grid-template-columns: 293px 293px 293px;
     grid-gap: 15px 15px;
+}
+
+.calcularPrecio{
+  display: flex;
+  gap: 110px;
+  position: absolute;
+  bottom: 10vh;
+  color: #000;
 }
 
 

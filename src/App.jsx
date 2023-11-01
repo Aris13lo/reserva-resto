@@ -1,15 +1,19 @@
 import './App.css';
 // import NavBar from './components/NavBar';
-import Reserva from './components/Reserva';
+import ReservaForm from './pages/ReservaForm';
+import ReservasList from './components/ReservasList';
 
 function App() {
 
   return (
     <>
       {/* <NavBar/> */}
-      <Reserva/>
+      <ReservaForm />
+      <ReservasList />
     </>
   )
 }
 
 export default App;
+
+
