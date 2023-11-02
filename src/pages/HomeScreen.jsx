@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import anime from 'animejs';
 import '../css/HomeScreen.css';
 import header from '../assets/header.jpg';
