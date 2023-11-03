@@ -1,6 +1,5 @@
 
-import './App.css'
-//  import NavBar from '../components/NavbarApp'
+import '../css/Registro.css' 
 
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
