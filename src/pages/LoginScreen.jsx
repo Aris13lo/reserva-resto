@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { authLogin } from "../helpers/ApiLogin";
 
 import logo from "../assets/logo.png";
-import "../css/login.css";
+import "../css/Login.css";
 
 //compoente del mesaje
 import MessageApp from "../components/MessageApp";
