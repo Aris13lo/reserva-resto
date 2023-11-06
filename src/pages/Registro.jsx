@@ -3,7 +3,7 @@ import '../css/Registro.css'
 
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
+import Swal from "sweetalert";
 
 const FormularioRegistro = () => {
   const {
@@ -23,8 +23,13 @@ const FormularioRegistro = () => {
   };
 
   return (
-    <Card border="primary">
-      <Card.Header className="bg-primary text-light">
+    <>
+    <div className='bg-dark'>
+      <div className='container container-register'>
+        <div className='row px-2' >
+        <div className='card-register'>
+        <Card border="primary">
+      <Card.Header className="bg-primary text-light card-titulo">
         Formulario Simple
       </Card.Header>
       <Card.Body>
@@ -36,7 +41,7 @@ const FormularioRegistro = () => {
               controlId="validationNombre"
               className="mb-3"
             >
-              <Form.Label>Nombre *</Form.Label>
+              <Form.Label>Nombre</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -136,7 +141,13 @@ const FormularioRegistro = () => {
         </Form>
       </Card.Body>
     </Card>
-  );
-};
+        </div>
+        </div>
+      </div>
+    </div>
+    </>
+
+  )
+}
 
 export default FormularioRegistro;
