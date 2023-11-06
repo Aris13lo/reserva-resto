@@ -30,7 +30,7 @@ const FormularioRegistro = () => {
         <div className='card-register'>
         <Card border="primary">
       <Card.Header className="bg-primary text-light card-titulo">
-        Formulario Simple
+        Registration Form
       </Card.Header>
       <Card.Body>
         <Form noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -99,7 +99,7 @@ const FormularioRegistro = () => {
               <Form.Control
                 required
                 type="number"
-                placeholder="9999999"
+                placeholder="123456789"
                 {...register("dni", {
                   required: "El dni es obligatorio",
                   pattern: {
@@ -122,7 +122,7 @@ const FormularioRegistro = () => {
               <Form.Control
                 required
                 type="email"
-                placeholder="juanperez@mail.com"
+                placeholder="juan@juanchomail.com"
                 {...register("email", {
                   required: "El dni es obligatorio",
                   pattern: {
