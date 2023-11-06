@@ -15,6 +15,7 @@ export const getCursos = async (limite = 0, pagina = 0) => {
   }
 };
 
+
 //Traer reservas por el id
 export const getCursoById = async (id) => {
   try {
@@ -32,6 +33,7 @@ export const getCursoById = async (id) => {
     throw new Error("No se pudo obtener la info");
   }
 };
+
 
 //crear una reserva
 export const crearReserva = async (datos) => {
@@ -54,6 +56,7 @@ export const crearReserva = async (datos) => {
   }
 };
 
+
 //Actualizar una reserva
 export const actualizarReserva = async (id, datos) => {
   try {
@@ -74,6 +77,7 @@ export const actualizarReserva = async (id, datos) => {
     return { msg: "No se conectó con backend" };
   }
 };
+
 
 //Borrar una reserva
 export const borrarReserva = async (id) => {
