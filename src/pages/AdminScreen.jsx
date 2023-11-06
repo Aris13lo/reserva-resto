@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 //Paginacion
 
-//Tabla de cursos
-import TableCursos from "../components/TableCursos";
+//Tabla de reservas
+import TableReservas from "../components/TableReservas";
 
-//Funcion traer cursos
-import { getCursos } from "../helpers/cursoApi";
+//Funcion traer reservas
+import { getReservas } from "../helpers/ReserveApi";
 
 const AdminScreen = () => {
-  //Cursos
-  const [cursos, setCursos] = useState([]);
-  //Total de cursos
-  const [totalCursos, setTotalCursos] = useState(0);
+  //Reservas
+  const [reservas, setReservas] = useState([]);
+  //Total de reservas
+  const [totalReservas, setTotalReservas] = useState(0);
 
-  //useEffect q renderiza la tabla con los cursos
+  //useEffect q renderiza la tabla con las reservas
   useEffect(() => {
-    traerCursos();
+    traerReservas();
   }, [cursos]);
 
   //Funcion asincronica
-  const traerCursos = async () => {
-    const { cursos, total } = await getCursos();
-    setCursos(cursos);
-    setTotalCursos(total);
+  const traerReservas = async () => {
+    const { reservas, total } = await getReservas();
+    setReservas(reservas);
+    setTotalReservas(total);
   };
 
   return (
@@ -40,11 +40,11 @@ const AdminScreen = () => {
         </div>
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
-            {/* Tabla de cursos */}
-            {cursos.length > 0 ? (
+            {/* Tabla de reservas */}
+            {reservas.length > 0 ? (
               <>
-                <h4>Total de cursos: {totalCursos}</h4>
-                <TableCursos cursos={cursos} traerCursos={traerCursos} />
+                <h4>Total de reservas: {totalReservas}</h4>
+                <TableReservas reservas={reservas} traerReservas={traerReservas} />
               </>
             ) : (
               <div className="d-flex justify-content-center">
