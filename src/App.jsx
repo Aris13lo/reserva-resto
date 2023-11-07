@@ -5,7 +5,7 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 import LoginScreen from "./pages/LoginScreen";
 import RoutesDos from "./routes/RoutesDos";
 
-import ErrorScreen from "./pages/ErrorScreen";
+// import ErrorScreen from "./pages/ErrorScreen";
 
 function App() {
   //Estados para manejar el login y datos del usuario
