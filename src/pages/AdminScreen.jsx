@@ -16,7 +16,7 @@ const AdminScreen = () => {
   //useEffect q renderiza la tabla con las reservas
   useEffect(() => {
     traerReservas();
-  }, [cursos]);
+  }, [reservas]);
 
   //Funcion asincronica
   const traerReservas = async () => {

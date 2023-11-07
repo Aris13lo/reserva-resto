@@ -1,9 +1,9 @@
 
-const url = "http://localhost:8080/api/cursos";
+const url = "http://localhost:8080/api/reservas";
 const token = JSON.parse(localStorage.getItem("token"));
 
 //Traer reservas
-export const getCursos = async (limite = 0, pagina = 0) => {
+export const getReservas = async (limite = 0, pagina = 0) => {
   try {
     const resp = await fetch(url + "?limite=" + limite + "&desde=" + pagina);
     const data = await resp.json();
@@ -17,7 +17,7 @@ export const getCursos = async (limite = 0, pagina = 0) => {
 
 
 //Traer reservas por el id
-export const getCursoById = async (id) => {
+export const getReservasById = async (id) => {
   try {
     const resp = await fetch(url + "/" + id, {
       method: "GET",

@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 //funcion borrar reservas
-import { borrarCurso } from "../helpers/ReserveApi";
+import { borrarReserva } from "../helpers/ReserveApi";
 
 //Sweet Alert
 import Swal from "sweetalert2";
@@ -24,7 +24,7 @@ const TableReservas = ({ reservas, traerReservas }) => {
   const handleClose = () => {
     setCid(null);
     setShow(false);
-    traerCursos();
+    traerReservas();
   };
 
   //abre el modal
@@ -87,7 +87,7 @@ const TableReservas = ({ reservas, traerReservas }) => {
 
         <tbody>
           {reservas.map((reserva) => (
-            <tr key={curso._id}>
+            <tr key={reserva._id}>
               <th>{reserva.nombre}</th>
               <td>{reserva.categoria.nombre}</td>
               <td>{reserva.precio}</td>

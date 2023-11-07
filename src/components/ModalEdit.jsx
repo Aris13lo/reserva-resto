@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 //funcion de reservas by id y actualizars
-import { getCursoById, actualizarCurso } from "../helpers/ReserveApi";
+import { getReservaById, actualizarReserva } from "../helpers/ReserveApi";
 //fucnion de categorias
 import { getCategorias } from "../helpers/categoriaApi";
 
@@ -30,7 +30,7 @@ const ModalEdit = ({ show, handleClose, cid }) => {
   const traerDatosDeReserva = async () => {
     const resp = await getReservaById(cid);
 
-    setReserva(resp.curso);
+    setReserva(resp.reserva);
   };
 
   const traerCategorias = async () => {
@@ -84,7 +84,7 @@ const ModalEdit = ({ show, handleClose, cid }) => {
           <Modal.Title>Editar Reserva</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {curso ? (
+          {reserva ? (
             <form onSubmit={handleSubmit}>
               <label className="fw-bold">Nombre</label>
               <input
