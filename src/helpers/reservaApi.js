@@ -1,5 +1,6 @@
 // reservaApi.js
 const url = "https://backend-vesubio.onrender.com/api/reservas";
+const token = JSON.parse(localStorage.getItem("token"));
 
 export const obtenerReservas = async () => {
   try {
@@ -29,6 +30,7 @@ export const crearReserva = async (datos) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        "x-token": token,
       },
       body: JSON.stringify(datos),
     });

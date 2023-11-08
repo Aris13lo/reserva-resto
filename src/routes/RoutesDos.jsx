@@ -4,6 +4,7 @@ import NavbarApp from "../components/NavbarApp";
 import AboutScreen from "../pages/AboutScreen";
 import AdminScreen from "../pages/AdminScreen";
 import ErrorScreen from "../pages/ErrorScreen";
+import ReservaForm from "../pages/ReservaForm";
 import HomeScreen from "../pages/HomeScreen";
 import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 
@@ -22,6 +23,7 @@ const RoutesDos = ({ cerrarSesion, user }) => {
             </ProtectedRoutesAdmin>
           }
         />
+        <Route path="/reserva" element={<ReservaForm />} />
         <Route path="*" element={<ErrorScreen />} />
       </Routes>
       <FooterApp />
