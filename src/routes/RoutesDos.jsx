@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import FooterApp from "../components/FooterApp";
-import NavbarApp from "../components/NavbarApp";
-import AboutScreen from "../pages/AboutScreen";
-import AdminScreen from "../pages/AdminScreen";
-import ErrorScreen from "../pages/ErrorScreen";
-import HomeScreen from "../pages/HomeScreen";
-import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
+//import FooterApp from "../components/FooterApp";
+//import NavbarApp from "../components/NavbarApp";
+//import AboutScreen from "../pages/AboutScreen";
+//import AdminScreen from "../pages/AdminScreen";
+//import ErrorScreen from "../pages/ErrorScreen";
+//import HomeScreen from "../pages/HomeScreen";
+//import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 
 const RoutesDos = ({ cerrarSesion, user }) => {
   return (
