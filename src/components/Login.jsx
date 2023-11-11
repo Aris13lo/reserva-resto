@@ -45,7 +45,7 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
   return (
     <>
       <div>
-      <div className="bg-dark">
+      <div>
       <div className="container container-login">
         <div className="row px-2">
           <div className="col-12 col-md-4 offset-md-4 card-login">
@@ -78,7 +78,7 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
                 />
               </div>
               <div className="mt-3 d-grid">
-                <button className="btn btn-dark" disabled={loading && true}>
+                <button disabled={loading && true}>
                   Iniciar Sesion
                 </button>
                 <p className='error escondido' >Error al iniciar sesion</p>
