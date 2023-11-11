@@ -1,32 +1,20 @@
+const url = "http://localhost:8080/api/usuarios";
 
-import Swal from "sweetalert2";
-
-const url = "http://localhost:8080/api/usuarios"
-
-
-
-
-export const Registrar = async (data) => {
-    // const usuario = {
-    //     "nombre": data.signUpNombre,
-    //     "correo": data.signUp,
-    //     "password": data.signUp,
-    //     "edad": data.signUp,
-    // }
+export const authSignUp = async (usuario) => {
     try {
-        //     const resp = await fetch(url, {
-        //         method: "POST",
-        //         body: JSON.stringify(data),
-        //         headers: {
-        //             "Content-type": "application/json; charset=UTF-8",
-        //         },
-        //     });
-        //     const datos = await resp.json();
-        //     return datos;
-        Swal(data);
-    } catch (error) {
-        alert(error);
-        return Swal.fire("Hubo Un Error En El Servidor, Porfavor Intente En Otro Momento")
-    }
+        const resp = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(usuario),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        });
 
-}
+        const data = await resp.json();
+
+        return data;
+    } catch (error) {
+        console.log(error);
+        return { msg: "No se conectó con backend" };
+    }
+};
