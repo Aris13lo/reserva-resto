@@ -21,7 +21,7 @@ body {
     border: 2px solid black;
     padding: 20px;
     border-radius: 10px;
-    background-color: rgb(208, 208, 209);
+    background-color: white;
   }
   
   .card-login img {
@@ -40,4 +40,13 @@ body {
   }
   .escondido{
     display: none;
+  }
+
+  .sr-only{
+    position:absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
