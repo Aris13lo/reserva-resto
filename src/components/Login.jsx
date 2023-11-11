@@ -1,5 +1,4 @@
 
-import React from "react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -49,9 +48,9 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
       <div className="container container-login">
         <div className="row px-2">
           <div className="col-12 col-md-4 offset-md-4 card-login">
-            <div className="d-flex justify-content-center align-items-center">
+            {/* <div className="d-flex justify-content-center align-items-center">
               <img src={logo} alt="logo" />
-            </div>
+            </div> */}
             <h3 className="text-center mt-2">
               <span>
                 <i className="fa fa-user-circle" aria-hidden="true"></i>
@@ -84,7 +83,7 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
                 <p className='error escondido' >Error al iniciar sesion</p>
               </div>
             </form>
-            <p>¿Todavia no tenes una cuenta? <Navlink to="/register">Registrate</Navlink> </p>
+            <p>¿Todavia no tenes una cuenta? <NavLink to="/register">Registrate</NavLink> </p>
             {resultado?.msg && (
               <div className="mt-2">
                 <MessageApp mensaje={resultado.msg} />

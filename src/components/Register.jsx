@@ -1,29 +1,40 @@
 
-//import Swal from 'sweetalert';
-import "../css/Register.css"
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import Swal from "sweetalert";
+//import { useForm } from "react-hook-form";
+import "../css/Register.css"
+import { authRegister } from "../helpers/ApiRegister"
+import { useState } from "react";
+
 
 const App = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }, reset
-  } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    Swal.fire(
-      "Datos enviados",
-      "Los datos fueron enviados correctamente",
-      "success"
-    );
-    reset();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const usuario={
+        nombre: values.nombre,
+        correo: values.correo, 
+        rol:"USER_ROLE",
+        password: values.password,
+    }
+    console.log(usuario);
+    const resp= await authRegister(usuario);
+    console.log(resp);
   };
 
+  const [values, setValues] = useState({
+    nombre: "",
+    correo: "",
+    password: "",
+  });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    })
+  }
 
   return (
     <>
@@ -37,7 +48,7 @@ const App = () => {
           <p>Crea tu cuenta para entrar al area de administracion</p>
       </Card.Header>
       <Card.Body>
-        <Form noValidate onSubmit={handleSubmit(onSubmit)}>
+        <Form noValidate onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group
               as={Col}
@@ -50,21 +61,11 @@ const App = () => {
                 required
                 type="text"
                 placeholder="Juan"
-                {...register("nombre", {
-                  required: "El nombre es obligatorio",
-                  minLength: {
-                    value: 2,
-                    message: "La cantidad minima de caracteres es 2",
-                  },
-                  maxLength: {
-                    value: 50,
-                    message: "La cantidad maxima de caracteres es 50",
-                  },
-                })}
+                value={values.nombre}
+                name="nombre"
+                onChange={handleChange}
+                
               />
-              <Form.Text className="text-danger">
-                {errors.nombre?.message}
-              </Form.Text>
             </Form.Group>
             <Form.Group
               as={Col}
@@ -72,49 +73,17 @@ const App = () => {
               controlId="validationApellido"
               className="mb-3"
             >
-              <Form.Label className='sr-only'  >Apellido</Form.Label>
+     
+              <Form.Label className='sr-only'  >CONTRASEÑA</Form.Label>
               <Form.Control
                 required
-                type="text"
-                placeholder="Perez"
-                {...register("apellido", {
-                  required: "El apellido es obligatorio",
-                  minLength: {
-                    value: 2,
-                    message: "La cantidad minima de caracteres es 2",
-                  },
-                  maxLength: {
-                    value: 50,
-                    message: "La cantidad maxima de caracteres es 50",
-                  },
-                })}
+                type="password"
+                placeholder="contraseña"
+                value={values.password}
+                name="password"
+                onChange={handleChange}
+               
               />
-              <Form.Text className="text-danger">
-                {errors.apellido?.message}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group
-              as={Col}
-              md="6"
-              controlId="validationDNI"
-              className="mb-3"
-            >
-              <Form.Label className='sr-only'  >DNI</Form.Label>
-              <Form.Control
-                required
-                type="number"
-                placeholder="9999999"
-                {...register("dni", {
-                  required: "El dni es obligatorio",
-                  pattern: {
-                    value: /^\d{7,8}(?:[-\s]\d{4})?$/,
-                    message: "Debe ingresar un dni valido de 7 a 8 caracteres",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger">
-                {errors.dni?.message}
-              </Form.Text>
             </Form.Group>
             <Form.Group
               as={Col}
@@ -122,29 +91,22 @@ const App = () => {
               controlId="validationEmail"
               className="mb-3"
             >
-              <Form.Label className='sr-only'  >Email</Form.Label>
+              <Form.Label className='sr-only' >Correo</Form.Label>
               <Form.Control
                 required
                 type="email"
                 placeholder="juanperez@mail.com"
-                {...register("email", {
-                  required: "El email es obligatorio",
-                  pattern: {
-                    value:
-                      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                    message: "Debe ingresar un email valido",
-                  },
-                })}
+                value={values.correo}
+                name="correo"
+                onChange={handleChange}
+              
               />
-              <Form.Text className="text-danger">
-                {errors.email?.message}
-              </Form.Text>
             </Form.Group>
           </Row>
           <Button type="submit">Iniciar Sesion</Button>
           <p className='error escondido' >Error al registrarse</p>
         </Form>
-        <p>¿Todavia no tenes una cuenta? <navlink to="/Login">Iniciar sesion</navlink> </p>
+        <p>¿Todavia no tenes una cuenta? <NavLink to="/Login">Iniciar sesion</NavLink> </p>
       </Card.Body>
     </Card>
         </div>

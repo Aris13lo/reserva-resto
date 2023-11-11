@@ -1,6 +1,6 @@
-const url = "http://localhost:8080/api/usuarios";
+const url = "https://backend-vesubio.onrender.com/api/usuarios/";
 
-export const authSignUp = async (usuario) => {
+export const authRegister = async (usuario) => {
     try {
         const resp = await fetch(url, {
             method: "POST",
@@ -18,3 +18,4 @@ export const authSignUp = async (usuario) => {
         return { msg: "No se conectó con backend" };
     }
 };
+
