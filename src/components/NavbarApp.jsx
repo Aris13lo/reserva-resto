@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import gsap from 'gsap';
-import 'phosphor-icons';
+//import gsap from 'gsap';
+//import 'phosphor-icons';
 import "../css/NavBar.css";
 
 function NavBar() {
