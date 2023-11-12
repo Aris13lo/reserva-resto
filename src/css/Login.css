@@ -1,5 +1,5 @@
 
-body {
+/* body {
     background-color: #7c6f55;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -7,10 +7,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100svh;
-    font-size: larger;
-}
+    font-size: larger; 
+} */
   
-.container-login {
+ .container-login {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,11 +24,11 @@ body {
     background-color: white;
   }
   
-  .card-login img {
+  /* .card-login img {
     width: 20%;
-  }
+  }  */
 
-  button{
+  /* button{
     background-color: #7c6f55;
     color: white;
     font-weight: bold;
@@ -49,4 +49,4 @@ body {
     width: 1px;
     height: 1px;
     overflow: hidden;
-  }
+  } */

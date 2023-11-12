@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { authLogin } from "../helpers/ApiLogin";
-//import MessageApp from "../components/MessageApp";
+import MessageApp from "../components/MessageApp";
 import "../css/login.css";
 
 
@@ -48,13 +48,7 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
       <div className="container container-login">
         <div className="row px-2">
           <div className="col-12 col-md-4 offset-md-4 card-login">
-            {/* <div className="d-flex justify-content-center align-items-center">
-              <img src={logo} alt="logo" />
-            </div> */}
             <h3 className="text-center mt-2">
-              <span>
-                <i className="fa fa-user-circle" aria-hidden="true"></i>
-              </span>
               Inicio de sesión
             </h3>
             <form onSubmit={handleLogin}>
@@ -62,6 +56,7 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
                 <label className='sr-only'>User</label>
                 <input
                   type="email"
+                  placeholder="juanperez@mail.com"
                   className="form-control"
                   value={inputCorreo}
                   onChange={(e) => setInputCorreo(e.target.value)}
@@ -71,6 +66,7 @@ const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
                 <label className='sr-only' >Password</label>
                 <input
                   type="password"
+                  placeholder="contraseña"
                   className="form-control"
                   value={inputPassword}
                   onChange={(e) => setInputPassword(e.target.value)}

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginRegister from "./pages/LoginRegister";
-import Register from "./components/Register"
+import Register from "./components/Register";
 //import ProtectedRoutes from "./routes/ProtectedRoutes";
 //import LoginScreen from "./pages/LoginScreen";
 //import RoutesDos from "./routes/RoutesDos";
