@@ -5,7 +5,7 @@ import { borrarReserva } from "../helpers/ReserveApi";
 
 //Sweet Alert
 import Swal from "sweetalert";
-//import withReactContent from "sweetalert2-react-content";
+import withReactContent from "sweetalert2-react-content";
 
 //importar el modal para editar
 import ModalEdit from "./ModalEdit";
