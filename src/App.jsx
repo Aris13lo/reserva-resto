@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
-import LoginScreen from "./pages/LoginScreen";
+// import LoginScreen from "./pages/LoginScreen";
 import RoutesDos from "./routes/RoutesDos";
 import ReservaForm from './pages/ReservaForm';
 
-import ErrorScreen from "./pages/ErrorScreen";
+// import ErrorScreen from "./pages/ErrorScreen";
 
 function App() {
   //Estados para manejar el login y datos del usuario

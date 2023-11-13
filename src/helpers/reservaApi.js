@@ -1,5 +1,5 @@
 // reservaApi.js
-const url = "https://backend-vesubio.onrender.com/api/reservas";
+const url = "https://localhost:8080/api/reservas/";
 const token = JSON.parse(localStorage.getItem("token"));
 
 export const obtenerReservas = async () => {
@@ -26,12 +26,14 @@ export const obtenerReservaPorId = async (id) => {
 
 export const crearReserva = async (datos) => {
   try {
+    debugger
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         "x-token": token,
       },
+      credentials: 'same-origin',
       body: JSON.stringify(datos),
     });
     const data = await response.json();
