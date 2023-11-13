@@ -3,13 +3,13 @@
 
 import React, { useEffect, useState } from "react";
 //funcion de reservas by id y actualizars
-import { getReservaById, actualizarReserva } from "../helpers/ReserveApi";
+//import { getReservaById, actualizarReserva } from "../helpers/ReserveApi";
 //fucnion de categorias
 import { getCategorias } from "../helpers/categoriaApi";
 
 //sweet alert
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert";
+//import withReactContent from "sweetalert2-react-content";
 
 //modal de react bootstrap
 import Modal from "react-bootstrap/Modal";
