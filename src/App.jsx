@@ -1,12 +1,11 @@
 import './App.css'
-import Galery from './pages/Gallery';
-import './css/Galery.css'
+import Footer from './components/Footer';
 
 function App() {
 
   return (
     <>
-      <Galery/>
+      <Footer/>
     </>
   )
 }
