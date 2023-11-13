@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import gsap from 'gsap';
 import anime from 'animejs';
+import { gsap } from "gsap";
 import '../css/HomeScreen.css';
 import header from '../assets/header.jpg';
 import hero from '../assets/hero.jpg';
-
 
 function HomeScreen() {
   useEffect(() => {
@@ -90,79 +89,79 @@ function HomeScreen() {
     });
   }, []);
 
-  return(
+  return (
     <div>
-          <div className="hero-img">
-          <img src={hero} alt="" />
-          </div>
-          <div className="container">
-            <div className="cols">
-              <div className="col col-left">
-                <div className="copy">
-                  <div className="header">Temporada - 2023</div>
-                  <div className="sub-header">
-                    Solicitar una reservación para una mesa
-                  </div>
-                  <div className="img-wrapper">
-                  <img src={header} alt="" />
-                  </div>
-                  <div className="info">
-                    Bienvenidos a El Vesubio: Donde la Pasión por la Gastronomía Alcanza las Estrellas. Le invitamos a unirse a nosotros en El Vesubio para experimentar un festín culinario sin igual. Para solicitar una reservación o reservar una mesa.
-                  </div>
-                  <div className="footer">
-                    <div className="footer-item">Solicitar mesa</div>
-                    <div className="footer-item">
-                      <img
-                        src="https://storage.googleapis.com/studio-design-asset-files/projects/BXaxK3jMq7/s-61x9_2c6bd15e-43e5-4ebf-bf39-a6ff23fb93dd.svg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="footer-item"><a href="#">Reservar</a></div>
-                  </div>
-                </div>
+      <div className="hero-img">
+      <img src={hero} alt="" />
+      </div>
+      <div className="container">
+        <div className="cols">
+          <div className="col col-left">
+            <div className="copy">
+              <div className="header">Temporada - 2023</div>
+              <div className="sub-header">
+                Solicitar una reservación para una mesa
               </div>
-              <div className="col col-right">
-                <div className="header">
-                  Eventos, Festines <br />
-                  y Celebraciones Especiales <br />
+              <div className="img-wrapper">
+              <img src={header} alt="" />
+              </div>
+              <div className="info">
+                Bienvenidos a El Vesubio: Donde la Pasión por la Gastronomía Alcanza las Estrellas. Le invitamos a unirse a nosotros en El Vesubio para experimentar un festín culinario sin igual. Para solicitar una reservación o reservar una mesa.
+              </div>
+              <div className="footer">
+                <div className="footer-item">Solicitar mesa</div>
+                <div className="footer-item">
+                  <img
+                    src="https://storage.googleapis.com/studio-design-asset-files/projects/BXaxK3jMq7/s-61x9_2c6bd15e-43e5-4ebf-bf39-a6ff23fb93dd.svg"
+                    alt=""
+                  />
                 </div>
+                <div className="footer-item"><a href="#">Reservar</a></div>
               </div>
             </div>
-            <nav>
-              <div className="nav-items">
-                <div className="nav-item">
-                  <a href="#">acerca de nosotros</a>
-                </div>
-                <div className="nav-item">
-                  <a href="#">nuestro hotel</a>
-                </div>
-              </div>
-              <div className="nav-items">
-                <div className="nav-item">
-                  <a href="#" id="logo">Vesubio &copy;</a>
-                </div>
-              </div>
-              <div className="nav-items">
-                <div className="nav-item">
-                  <a className="nav-link-right" href="#">iniciar sesion</a>
-                </div>
-                <div className="nav-item">
-                  <a className="nav-link-right" href="#">reserva</a>
-                </div>
-              </div>
-            </nav>
           </div>
-          <div className="loader-text-wrapper block">
-            <h1 className="loader-text">Vesubio</h1>
-          </div>
-          <div className="revealer"></div>
-          <div className="pre-loader block">
-            <div className="loader-wrapper">
-              <div className="loader"></div>
+          <div className="col col-right">
+            <div className="header">
+              Eventos, Festines <br />
+              y Celebraciones Especiales <br />
             </div>
           </div>
         </div>
-  )
+        <nav>
+          <div className="nav-items">
+            <div className="nav-item">
+              <a href="#">acerca de nosotros</a>
+            </div>
+            <div className="nav-item">
+              <a href="#">nuestro hotel</a>
+            </div>
+          </div>
+          <div className="nav-items">
+            <div className="nav-item">
+              <a href="#" id="logo">Vesubio &copy;</a>
+            </div>
+          </div>
+          <div className="nav-items">
+            <div className="nav-item">
+              <a className="nav-link-right" href="#">iniciar sesion</a>
+            </div>
+            <div className="nav-item">
+              <a className="nav-link-right" href="#">reserva</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div className="loader-text-wrapper block">
+        <h1 className="loader-text">Vesubio</h1>
+      </div>
+      <div className="revealer"></div>
+      <div className="pre-loader block">
+        <div className="loader-wrapper">
+          <div className="loader"></div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default HomeScreen;
