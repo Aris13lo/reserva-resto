@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 //import AboutScreen from "../pages/AboutScreen";
 //import AdminScreen from "../pages/AdminScreen";
 //import ErrorScreen from "../pages/ErrorScreen";
-//import HomeScreen from "../pages/HomeScreen";
+import HomeScreen from "../pages/HomeScreen";
 //import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 
 const RoutesDos = ({ cerrarSesion, user }) => {
@@ -12,7 +12,7 @@ const RoutesDos = ({ cerrarSesion, user }) => {
     <>
       {/* <NavbarApp cerrarSesion={cerrarSesion} user={user} /> */}
       <Routes>
-        {/* <Route path="/" element={<HomeScreen />} /> */}
+        <Route path="/" element={<HomeScreen />} />
         {/* <Route path="/about" element={<AboutScreen />} /> */}
         {/* <Route
           path="/admin"

@@ -8,7 +8,7 @@ import "../css/login.css";
 
 
 
-const Login = ({ iniciarSesion, guardarUsuario, registro }) => {
+const Login = ({ iniciarSesion, guardarUsuario }) => {
 
   const navigate = useNavigate();
   const [inputCorreo, setInputCorreo] = useState("");
