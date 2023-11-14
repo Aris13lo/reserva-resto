@@ -16,29 +16,13 @@
     "gsap": "^3.12.2",
     "phosphor-icons": "^1.4.2",
     "react": "^18.2.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-router-dom": "^6.17.0"
-=======
-    "react-router-dom": "^6.18.0"
->>>>>>> 6796646537e9bca9523693fc857e577df75a86aa
-=======
+    "react-router-dom": "^6.17.0",
     "react-bootstrap": "^2.9.1",
-    "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
     "react-icons": "^4.11.0",
-    "react-router-dom": "^6.18.0",
     "styled-components": "^6.1.1",
     "sweetalert": "^2.1.2"
->>>>>>> 601a7992c26c2fc2728bd9c919a3ed712c73a213
-=======
-    "react-bootstrap": "^2.9.1",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.18.0",
-    "sweetalert": "^2.1.2"
->>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

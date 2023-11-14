@@ -39,7 +39,7 @@ function App() {
             </ProtectedRoutes>
           }
         />
-        <Route path="*" element={<ErrorScreen />} />
+        {/* <Route path="*" element={<ErrorScreen />} /> */}
 
         {/* Ruta login que recibe funcion iniciar sesion y guardar datos */}
         <Route
