@@ -10,13 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "bootstrap": "^5.3.2",
     "font-awesome": "^4.7.0",
     "gsap": "^3.12.2",
     "phosphor-icons": "^1.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-router-dom": "^6.17.0"
+=======
+    "react-router-dom": "^6.18.0"
+>>>>>>> 6796646537e9bca9523693fc857e577df75a86aa
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
