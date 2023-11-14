@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 //Paginacion
 
 //Tabla de reservas
-//import TableReservas from "../components/TableReserve";
+import TableReservas from "../components/TableReserve";
 
 //Funcion traer reservas
 import { getReservas } from "../helpers/ReserveApi";
@@ -36,7 +36,7 @@ const AdminScreen = () => {
               <span>
                 <i className="fa fa-cogs" aria-hidden="true"></i>{" "}
               </span>
-              Panel administrador
+              Panel administrador de Reservas
             </h1>
           </div>
         </div>
