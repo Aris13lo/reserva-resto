@@ -1,0 +1,52 @@
+
+/* body {
+    background-color: #7c6f55;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    font-size: larger; 
+} */
+  
+ .container-login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card-login {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  /* .card-login img {
+    width: 20%;
+  }  */
+
+  /* button{
+    background-color: #7c6f55;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .error{
+    color: red;
+  }
+  .escondido{
+    display: none;
+  }
+
+  .sr-only{
+    position:absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  } */
