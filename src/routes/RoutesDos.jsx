@@ -1,10 +1,10 @@
 
 import { Routes, Route } from "react-router-dom";
-import FooterApp from "../components/FooterApp";
+import Footer from "../components/Footer";
 import NavbarApp from "../components/NavbarApp";
-import AboutScreen from "../pages/AboutScreen";
+import Gallery from "../pages/Gallery";
 import AdminScreen from "../pages/AdminScreen";
-import ErrorScreen from "../pages/ErrorScreen";
+import Reservas from "../pages/ReservaForm";
 import HomeScreen from "../pages/HomeScreen";
 import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 
@@ -14,7 +14,9 @@ const RoutesDos = ({ cerrarSesion, user }) => {
       <NavbarApp cerrarSesion={cerrarSesion} user={user} />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
-        <Route path="/about" element={<AboutScreen />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/Reservas" element={<Reservas />} />
+
         <Route
           path="/admin"
           element={
@@ -23,9 +25,9 @@ const RoutesDos = ({ cerrarSesion, user }) => {
             </ProtectedRoutesAdmin>
           }
         />
-        <Route path="*" element={<ErrorScreen />} />
+        {/* <Route path="*" element={<ErrorScreen />} /> */}
       </Routes>
-      <FooterApp />
+      <Footer />
     </>
   );
 };

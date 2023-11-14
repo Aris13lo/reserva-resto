@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
-import LoginScreen from "./pages/LoginScreen";
 import RoutesDos from "./routes/RoutesDos";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
-import ErrorScreen from "./pages/ErrorScreen";
 
 function App() {
   //Estados para manejar el login y datos del usuario
@@ -45,13 +45,21 @@ function App() {
         <Route
           path="/login"
           element={
-            <LoginScreen
+            <Login
               iniciarSesion={iniciarSesion}
               guardarUsuario={guardarUsuario}
             />
           }
         />
+      <Route
+          path="/register"
+          element={
+            <Register
+            />
+          }
+        />
       </Routes>
+
     </BrowserRouter>
   );
 }
