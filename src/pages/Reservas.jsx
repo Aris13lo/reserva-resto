@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 //Paginacion
 
 //Tabla de reservas
-import TableReservas from "../components/TableReserve";
+//import TableReservas from "../components/TableReserve";
 
 //Funcion traer reservas
 import { getReservas } from "../helpers/ReserveApi";

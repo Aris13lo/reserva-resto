@@ -1,4 +1,6 @@
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Reservas from "../pages/Reservas";
+import Admin from "../pages/Admin";
 // import FooterApp from "../components/FooterApp";
 // import NavbarApp from "../components/NavbarApp";
 // import AboutScreen from "../pages/AboutScreen";
@@ -7,26 +9,27 @@
 // import HomeScreen from "../pages/HomeScreen";
 // import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 
-// const RoutesDos = ({ cerrarSesion, user }) => {
-//   return (
-//     <>
-//       <NavbarApp cerrarSesion={cerrarSesion} user={user} />
-//       <Routes>
-//         <Route path="/" element={<HomeScreen />} />
-//         <Route path="/about" element={<AboutScreen />} />
-//         <Route
-//           path="/admin"
-//           element={
-//             <ProtectedRoutesAdmin user={user}>
-//               <AdminScreen />
-//             </ProtectedRoutesAdmin>
-//           }
-//         />
-//         <Route path="*" element={<ErrorScreen />} />
-//       </Routes>
-//       <FooterApp />
-//     </>
-//   );
-// };
+ const RoutesDos = ({ cerrarSesion, user }) => {
+   return (
+     <>
+      {/* <NavbarApp cerrarSesion={cerrarSesion} user={user} /> */}
+      <Routes>
+         <Route path="/" element={<HomeScreen />} />
+        {/* <Route path="/about" element={<AboutScreen />} /> */}
+        <Route path="/admin" element={<Admin />} />
+        {/* <Route
+           path="/admin"
+           element={
+            <ProtectedRoutesAdmin user={user}>
+               <AdminScreen />
+             </ProtectedRoutesAdmin>
+          }
+         /> */}
+        {/* <Route path="*" element={<ErrorScreen />} /> */}
+       </Routes>
+       {/* <FooterApp /> */}
+     </>
+   );
+ };
 
-// export default RoutesDos;
+ export default RoutesDos;

@@ -3,13 +3,13 @@
 
 import React, { useEffect, useState } from "react";
 //funcion de reservas by id y actualizars
-//import { getReservaById, actualizarReserva } from "../helpers/ReserveApi";
+import { getReservaById, actualizarReserva } from "../helpers/ReserveApi";
 //fucnion de categorias
 import { getCategorias } from "../helpers/categoriaApi";
 
 //sweet alert
 import Swal from "sweetalert";
-//import withReactContent from "sweetalert2-react-content";
+import withReactContent from "sweetalert2-react-content";
 
 //modal de react bootstrap
 import Modal from "react-bootstrap/Modal";
@@ -70,7 +70,7 @@ const ModalEdit = ({ show, handleClose, cid }) => {
 
     //funcion actualizar
     await actualizarReserva(reserva._id, reserva);
-    MySwal.fire("reserva actualizada", "", "success");
+    MySwal.fire("Reserva actualizada", "", "success");
 
     // cerrar el modal
     handleClose();
