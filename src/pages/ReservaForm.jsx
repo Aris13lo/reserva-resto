@@ -1,15 +1,18 @@
 // ReservationForm.js
-import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-import '../css/reserva.css';
-import { crearReserva } from '../helpers/reservaApi';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../css/reserva.css";
+import { crearReserva } from "../helpers/reservaApi";
+import { getCategorias } from "../helpers/categoriaApi";
 
 const ReservaForm = ({ onReserve, selectedReservation }) => {
+  const [categorias, setCategorias] = useState(null);
+
   const [formData, setFormData] = useState({
-    nombre: '',
-    categoria: '',
-    fecha: '',
-    hora: '',
+    nombre: "",
+    categoria: "",
+    fecha: "",
+    hora: "",
     precio: 0,
     personas: 1,
   });
@@ -22,9 +25,11 @@ const ReservaForm = ({ onReserve, selectedReservation }) => {
 
     // Decodifica el token para obtener la información del usuario
     if (token) {
-      const decodedToken = JSON.parse(atob(token.split('.')[1])); // Decodificación base64 manual
+      const decodedToken = JSON.parse(atob(token.split(".")[1])); // Decodificación base64 manual
       setUser(decodedToken.usuario); // Ajusta la propiedad 'usuario' según la estructura de tu token
     }
+
+    traerCategorias();
   }, []);
 
   useEffect(() => {
@@ -41,6 +46,11 @@ const ReservaForm = ({ onReserve, selectedReservation }) => {
     }
   }, [selectedReservation]);
 
+  const traerCategorias = async () => {
+    const { categorias } = await getCategorias();
+    setCategorias(categorias);
+  };
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -48,41 +58,37 @@ const ReservaForm = ({ onReserve, selectedReservation }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const {_id} = JSON.parse(window.localStorage.getItem("usuario"));
+    const { _id } = JSON.parse(localStorage.getItem("usuario"));
     const idUsuario = _id;
     console.log(_id);
 
     try {
       const { nombre, categoria, fecha, hora, precio, personas } = formData;
 
-      const datosReserva = { nombre, categoria, fecha, hora, precio, personas, usuario: idUsuario };
+      const datosReserva = {
+        nombre,
+        categoria,
+        fecha,
+        hora,
+        precio,
+        personas,
+        usuario: idUsuario,
+      };
 
-      console.log(datosReserva);
+       
       const resp = await crearReserva(datosReserva);
       console.log(resp);
 
-      // if (!user) {
-      //   console.error("Usuario no autenticado");
-      //   return;
-      // }
-
-      // if (selectedReservation) {
-      //   await axios.put(`https://backend-vesubio.onrender.com/api/reservas/${selectedReservation._id}`, formData);
-      // } else {
-      //   const response = await axios.post('https://backend-vesubio.onrender.com/api/reservas', formData);
-      //   onReserve(response.data);
-      // }
-
-      setFormData({
-        nombre: '',
-        categoria: '',
-        fecha: '',
-        hora: '',
+       setFormData({
+        nombre: "",
+        categoria: "",
+        fecha: "",
+        hora: "",
         precio: 0,
         personas: 1,
       });
     } catch (error) {
-      console.error('Error al guardar la reserva:', error);
+      console.error("Error al guardar la reserva:", error);
     }
   };
 
@@ -93,7 +99,7 @@ const ReservaForm = ({ onReserve, selectedReservation }) => {
 
   return (
     <section className="banner">
-      <h2>{selectedReservation ? 'EDITAR RESERVA' : 'RESERVA TU MESA'}</h2>
+      <h2>{selectedReservation ? "EDITAR RESERVA" : "RESERVA TU MESA"}</h2>
       <div className="card-contenedor">
         <div className="card-img"></div>
         <div className="card-contenido">
@@ -117,15 +123,17 @@ const ReservaForm = ({ onReserve, selectedReservation }) => {
                 required
               >
                 <option value="">Selecciona una categoría</option>
-                <option value="mesa_individual">Mesa Individual</option>
-                <option value="mesa_pareja">Mesa Pareja</option>
-                <option value="mesa_familiar">Mesa Familiar</option>
-                <option value="mesa_ejecutivo">Mesa Ejecutivo</option>
+                {categorias &&
+                  categorias.map((categoria) => (
+                    <option key={categoria._id} value={categoria._id}>
+                      {categoria.nombre}
+                    </option>
+                  ))}
               </select>
               <input
                 type="date"
                 name="fecha"
-                min={new Date().toISOString().split('T')[0]}
+                min={new Date().toISOString().split("T")[0]}
                 value={formData.fecha}
                 onChange={handleInputChange}
                 required
@@ -151,11 +159,16 @@ const ReservaForm = ({ onReserve, selectedReservation }) => {
                 onChange={handleInputChange}
                 required
               />
-              <div className='calcularPrecio'>
+              <div className="calcularPrecio">
                 <p>Precio por persona: $100</p>
-                <p className='total'>Total: ${calcularPrecio()}</p>
+                <p className="total">Total: ${calcularPrecio()}</p>
               </div>
-              <input type="submit" value={selectedReservation ? 'GUARDAR CAMBIOS' : 'RESERVAR MESA'} />
+              <input
+                type="submit"
+                value={
+                  selectedReservation ? "GUARDAR CAMBIOS" : "RESERVAR MESA"
+                }
+              />
             </div>
           </form>
         </div>
