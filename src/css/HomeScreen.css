@@ -30,85 +30,6 @@ body {
   object-fit: cover;
 }
 
-nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-}
-
-.nav-items {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-items:first-child {
-  margin-right: auto;
-}
-
-.nav-items:last-child {
-  margin-left: auto;
-}
-
-.nav-items .nav-item {
-  padding: 2em;
-}
-
-.nav-items .nav-item a {
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "Neue Montreal";
-  font-size: 18px;
-  color: #000;
-  white-space: nowrap;
-}
-
-.nav-items .nav-item a#logo {
-  text-transform: capitalize;
-    font-family: 'Great Vibes', cursive;
-    color: #967f00;
-    font-size: 35px;
-}
-
-.nav-items .nav-item a::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #000000;
-  border-radius: 5px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: .5s;
-}
-
-.nav-items .nav-item a:hover::after{
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.nav-items .nav-item .nav-link-right{
-  color: #b7a791;
-}
-
-.nav-items .nav-item .nav-link-right::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #b7a791;
-  border-radius: 5px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: .5s;
-}
-
 .cols {
   width: 100%;
   display: flex;
@@ -130,7 +51,7 @@ nav {
   color: #e2da17;
   text-transform: uppercase;
   border: none;
-  padding: 3em 2em 2em 2em;
+  padding: 1.5em 1em 1em 1em;
 }
 
 .col-right .header {
@@ -139,13 +60,13 @@ nav {
 
 .col-left {
   position: relative;
-  left: 0%;
+  left: 0;
   background: #ebe2d5;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4em 2em 2em 2em;
+  padding: 1em;
 }
 
 .copy {
@@ -154,10 +75,10 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 100%;
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   font-family: "Neue Montreal";
+  padding: 30px;
 }
 
 .copy > * {
@@ -166,11 +87,11 @@ nav {
 
 .col-left .header {
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 16px;
   border: 1px solid #000;
   border-radius: 10px;
   padding: 0.2em 0.4em;
-  margin: 1em 0;
+  margin: 0.3em 0;
 }
 
 .sub-header {
@@ -192,10 +113,10 @@ nav {
 }
 
 .info {
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
   color: rgb(60, 60, 60);
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 .footer {
@@ -257,6 +178,7 @@ nav {
   align-items: center;
   width: 100%;
   height: 100vh;
+  opacity: 0;
 }
 
 .loader-text-wrapper {
