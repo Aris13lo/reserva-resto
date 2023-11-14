@@ -1,17 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import "font-awesome/css/font-awesome.css";
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../css/Footer.css';
 
-    const Footer = () => {
-    return (
-        <div>
-            <div className="redes">
-                <Link to="https://www.twitch.com/" className="fa fa-twitter"></Link>
-                <Link to="https://www.facebook.com/" className="fa fa-facebook"></Link>
-                <Link to="https://www.instagram.com/" className="fa fa-instagram"></Link>
-            </div>
-        </div>
-    );
-};
+function App() {
+  return (
+    <Router>
+      <div>
+        <footer>
+          <Link to="#"><i className="fab fa-facebook"></i></Link>
+          <Link to="#"><i className="fab fa-instagram"></i></Link>
+          <Link to="#"><i className="fab fa-twitter"></i></Link>
+        </footer>
+      </div>
+    </Router>
+  );
+}
 
-export default Footer;
+export default App;
