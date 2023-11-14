@@ -4,6 +4,7 @@
     box-sizing: border-box;
   }
 
+<<<<<<< HEAD:src/css/NavBar.css
   html,
   body {
     width: 100%;
@@ -11,6 +12,10 @@
     background: url("../assets/background2.jpg") no-repeat 50% 50%;
     background-size: cover;
   }
+=======
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+>>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293:src/css/reservas.css
 
   p,
   a {
@@ -22,6 +27,7 @@
     line-height: 100%;
   }
 
+<<<<<<< HEAD:src/css/NavBar.css
   i {
     position: relative;
     color: #fff;
@@ -204,3 +210,9 @@
       gap: 5px;
     }
   }
+=======
+.icono{
+    font-family: 'Great Vibes', cursive;
+    color: #967f00;
+}
+>>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293:src/css/reservas.css

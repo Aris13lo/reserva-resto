@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 // import React, { useState } from "react";
 // //funcion borrar reservas
 // import { borrarCurso } from "../helpers/ReserveApi";
@@ -12,6 +13,21 @@
 
 // const TableReservas = ({ reservas, traerReservas }) => {
 //   const MySwal = withReactContent(Swal);
+=======
+import React, { useState } from "react";
+//funcion borrar reservas
+import { borrarReserva } from "../helpers/ReserveApi";
+
+//Sweet Alert
+//import Swal from "sweetalert";
+//import withReactContent from "sweetalert2-react-content";
+
+//importar el modal para editar
+// import ModalEdit from "./ModalEdit";
+
+const TableReservas = ({ reservas, traerReservas }) => {
+//const MySwal = withReactContent(Swal);
+>>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293
 
 //   //Manejo del modal-------------------
 //   //mostrar el modal
@@ -20,6 +36,7 @@
 //   //por id del reserva
 //   const [cid, setCid] = useState(null);
 
+<<<<<<< HEAD
 //   //cierre del modal
 //   const handleClose = () => {
 //     setCid(null);
@@ -28,11 +45,25 @@
 //   };
 
 //   //abre el modal
+=======
+  //cierre del modal
+  const handleClose = () => {
+    setCid(null);
+    setShow(false);
+    traerReservas();
+  };
+
+  //abre el modal
+>>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293
 //   const handleShow = (id) => {
 //     setCid(id);
 //     setShow(true);
 //   };
+<<<<<<< HEAD
 //   //--------------------------------------------
+=======
+  //--------------------------------------------
+>>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293
 
 //   //borrar reserva--------------------------------
 //   const inactivarReserva = async (nombre, id) => {
@@ -85,6 +116,7 @@
 //           </tr>
 //         </thead>
 
+<<<<<<< HEAD
 //         <tbody>
 //           {reservas.map((reserva) => (
 //             <tr key={curso._id}>
@@ -124,5 +156,46 @@
 //     </>
 //   );
 // };
+=======
+        <tbody>
+          {reservas.map((reserva) => (
+            <tr key={reserva._id}>
+              <th>{reserva.nombre}</th>
+              {/* <td>{reserva.categoria.nombre}</td> */}
+              <td>{reserva.precio}</td>
+              <td>
+                {reserva.destacada ? (
+                  <i className="fa fa-star" aria-hidden="true"></i>
+                ) : (
+                  <i className="fa fa-star-o" aria-hidden="true"></i>
+                )}
+              </td>
+              <td>
+                <div className="d-flex gap-3">
+                  <button
+                    className="btn btn-warning btn-sm"
+                    onClick={() => handleShow(reserva._id)}
+                  >
+                    <i className="fa fa-pencil" aria-hidden="true"></i>
+                  </button>
+                  {/* boton eliminar reserva */}
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => inactivarReserva(reserva.nombre, reserva._id)}
+                  >
+                    <i className="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {/* modales para editar */}
+      {/* {show && <ModalEdit show={show} handleClose={handleClose} cid={cid} />} */}
+    </>
+  );
+};
+>>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293
 
 // export default TableReservas;

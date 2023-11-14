@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from "react";
 //Paginacion
 
@@ -8,15 +10,15 @@ import TableReservas from "../components/TableReserve";
 import { getReservas } from "../helpers/ReserveApi";
 
 const AdminScreen = () => {
-  //Reservas
+  //reservas
   const [reservas, setReservas] = useState([]);
   //Total de reservas
   const [totalReservas, setTotalReservas] = useState(0);
 
-  //useEffect q renderiza la tabla con las reservas
+  //useEffect q renderiza la tabla con los reservas
   useEffect(() => {
     traerReservas();
-  }, [cursos]);
+  }, [reservas]);
 
   //Funcion asincronica
   const traerReservas = async () => {
@@ -34,7 +36,7 @@ const AdminScreen = () => {
               <span>
                 <i className="fa fa-cogs" aria-hidden="true"></i>{" "}
               </span>
-              Panel administrador
+              Panel administrador de Reservas
             </h1>
           </div>
         </div>

@@ -1,15 +1,31 @@
 
-import { useState } from "react";
+//import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginRegister from "./pages/LoginRegister";
-import Register from "./components/Register";
-//import ProtectedRoutes from "./routes/ProtectedRoutes";
-//import LoginScreen from "./pages/LoginScreen";
-//import RoutesDos from "./routes/RoutesDos";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
+import LoginScreen from "./pages/LoginScreen";
+import RoutesDos from "./routes/RoutesDos";
 
-//import ErrorScreen from "./pages/ErrorScreen";
+import ErrorScreen from "./pages/ErrorScreen";
 
 function App() {
+  //Estados para manejar el login y datos del usuario
+  const [login, setLogin] = useState(false);
+  const [user, setUser] = useState(null);
+
+  //funcion para guarsar datos del usuario
+  const guardarUsuario = (datos) => {
+    setUser(datos);
+  };
+
+  //funcion para iniciar sesion
+  const iniciarSesion = () => {
+    setLogin(true);
+  };
+
+  //funcion para cerrar sesion
+  const cerrarSesion = () => {
+    setLogin(false);
+  };
 
   return (
     
@@ -23,10 +39,10 @@ function App() {
               <RoutesDos cerrarSesion={cerrarSesion} user={user} />
             </ProtectedRoutes>
           }
-        /> */}
-        {/* <Route path="*" element={<ErrorScreen />} /> */}
+        />
+        <Route path="*" element={<ErrorScreen />} />
 
-        {/* Ruta login que recibe funcion iniciar sesion y guardar datos */}
+        {/* Ruta login que recibe funcion iniciar sesion y guardar datos
         <Route
           path="/login"
           element={
@@ -35,10 +51,6 @@ function App() {
               guardarUsuario={guardarUsuario}
             />
           }
-        />
-        <Route path="/Register" element={
-          <Register/>
-        }
         />
       </Routes>
     </BrowserRouter>
