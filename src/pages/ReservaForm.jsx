@@ -1,6 +1,5 @@
 // ReservationForm.js
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "../css/reserva.css";
 import { crearReserva } from "../helpers/reservaApi";
 import { getCategorias } from "../helpers/categoriaApi";
