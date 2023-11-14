@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavbarApp from "../components/NavbarApp";
 import Gallery from "../pages/Gallery";
-import AdminScreen from "../pages/AdminScreen";
+//import AdminScreen from "../pages/AdminScreen";
 import Reservas from "../pages/ReservaForm";
 import HomeScreen from "../pages/HomeScreen";
 import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
