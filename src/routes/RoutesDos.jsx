@@ -7,6 +7,7 @@ import NavbarApp from "../components/NavbarApp";
 import AboutScreen from "../pages/AboutScreen";
 import AdminScreen from "../pages/AdminScreen";
 import ErrorScreen from "../pages/ErrorScreen";
+import ReservaForm from "../pages/ReservaForm";
 import HomeScreen from "../pages/HomeScreen";
 import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 =======
@@ -61,16 +62,12 @@ import Admin from "../pages/Admin";
                <AdminScreen />
              </ProtectedRoutesAdmin>
           }
-         /> */}
-        {/* <Route path="*" element={<ErrorScreen />} /> */}
-       </Routes>
-       {/* <FooterApp /> */}
-     </>
-   );
- };
+        />
+        <Route path="*" element={<ErrorScreen />} />
+      </Routes>
+      <FooterApp />
+    </>
+  );
+};
 
-<<<<<<< HEAD
-export default RoutesApp;
-=======
- export default RoutesDos;
->>>>>>> 09af803ad2b55ccf402c2c662e8e020940a98293
+export default RoutesDos;

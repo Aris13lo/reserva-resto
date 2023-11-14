@@ -1,162 +1,67 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-//import gsap from 'gsap';
-//import 'phosphor-icons';
-import "../css/NavBar.css";
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
+import "../css/navbar.css";
 
-function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNav = () => {
-    const nav = document.querySelector('.nav');
-    const navHome = document.querySelector('.nav-home');
-    const navTop = document.querySelector('.nav-top');
-    const navItems = document.querySelector('.nav-items');
-    const icon = document.querySelector('.hamburger i');
-
-    if (!isOpen) {
-      gsap.to(nav, { height: '370px', duration: 0.75, ease: 'power4.inOut' });
-      gsap.to(navTop, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3,
-        onStart: function () {
-          gsap.set(navTop, { display: 'block' });
-        },
-        delay: 0.5,
-        immediateRender: false,
-      });
-      gsap.to(navItems, {
-        opacity: 0,
-        duration: 0.1,
-        onComplete: function () {
-          gsap.set(navItems, { display: 'none' });
-        },
-        immediateRender: false,
-      });
-      gsap.to(navHome, {
-        flexGrow: 1,
-        duration: 0.2,
-        ease: 'power4.inOut',
-        delay: 0,
-        immediateRender: false,
-        onComplete: function () {
-          icon.className = 'ph-light ph-x';
-        },
-      });
-    } else {
-      gsap.to(nav, { height: '60px', duration: 0.75, ease: 'power4.inOut', delay: 0.2 });
-      gsap.to(navTop, {
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.2,
-        onComplete: function () {
-          gsap.set(navTop, { display: 'none' });
-        },
-        immediateRender: false,
-      });
-      gsap.to(navHome, {
-        flexGrow: 0,
-        duration: 0.2,
-        ease: 'power4.inOut',
-        immediateRender: false,
-        onComplete: function () {
-          icon.className = 'ph-light ph-list';
-        },
-      });
-      gsap.to(navItems, {
-        opacity: 1,
-        duration: 0.2,
-        onStart: function () {
-          gsap.set(navItems, { display: 'flex' });
-        },
-        delay: 0.5,
-        immediateRender: false,
-      });
-    }
-    setIsOpen(!isOpen);
-  };
-
-    return (
-<div className="nav">
-      <div className="nav-top">
-        <div className="more-links">
-                    <div className="col">
-                        <div className="col-title">
-                            <p>Reservaciones</p>
-                        </div>
-                        <div className="NavLink">
-                            <NavLink to="#">Reserva</NavLink>
-                        </div>
-                        
-                        <div className="NavLink">
-                            <NavLink to="#">Cambiar reserva</NavLink>
-                        </div>
-                        
-                        <div className="NavLink">
-                            <NavLink to="#">Cancelar reserva</NavLink>
-                        </div>
-                    </div>
-
-                    <div className="col">
-                        <div className="col-title">
-                            <p>Nuestra historia</p>
-                        </div>
-                        <div className="NavLink">
-                            <NavLink to="#">Restaurante</NavLink>
-                        </div>
-                        
-                        <div className="NavLink">
-                            <NavLink to="#">Comidas</NavLink>
-                        </div>
-                        
-                        <div className="NavLink">
-                            <NavLink to="#">Acerca de nosotros</NavLink>
-                        </div>
-                    </div>
-
-                    <div className="col">
-                        <div className="col-title">
-                            <p>¿Buscas alojamiento?</p>
-                        </div>
-                        <div className="NavLink">
-                            <NavLink to="#">Nuestro hotel</NavLink>
-                        </div>
-                        
-                        <div className="NavLink">
-                            <NavLink to="#">Habitaciones</NavLink>
-                        </div>
-                        
-                        <div className="NavLink">
-                            <NavLink to="#">Contacto</NavLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="nav-bottom">
-        <div className="nav-home">
-          <div className="nav-item" id="toggle-btn" onClick={toggleNav}>
-            <div className="hamburger">
-              <i className={`ph-light ${isOpen ? 'ph-x' : 'ph-list'}`}></i>
-            </div>
-            <p href="#">Mas</p>
-          </div>
+const NavbarApp = ({ cerrarSesion, user }) => {
+  return (
+    <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <img className="img-logo" src={logo} alt="logo" />
+          <span> RollingCode Universe</span>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink className="nav-link" aria-current="page" to="/">
+                <i className="fa fa-home" aria-hidden="true"></i>
+                Inicio
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/about">
+                <i className="fa fa-users" aria-hidden="true"></i>
+                Sobre nosotros
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/destacados">
+                <i className="fa fa-star" aria-hidden="true"></i>
+                Destacados
+              </NavLink>
+            </li>
+            {user.rol === "ADMIN_ROLE" && (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/admin">
+                  <i className="fa fa-cog" aria-hidden="true"></i>
+                  Admin
+                </NavLink>
+              </li>
+            )}
+          </ul>
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <button className="btn nav-link" onClick={cerrarSesion}>
+                Cerrar sesión
+              </button>
+            </li>
+          </ul>
         </div>
-        <div className="nav-items">
-                    <div className="nav-item">
-                        <NavLink to="#">Página Principal</NavLink>
-                    </div>
-                    <div className="nav-item">
-                        <NavLink to="#">Nuestra Historia</NavLink>
-                    </div>
-                    <div className="nav-item">
-                        <NavLink to="#">Contacto</NavLink>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+      </div>
+    </nav>
+  );
+};
 
-export default NavBar;
+export default NavbarApp;
