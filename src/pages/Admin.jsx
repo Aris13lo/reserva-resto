@@ -1,45 +1,65 @@
 
 
-import React from "react";
-import "./css/admin.css";
+import React, { useEffect, useState } from "react";
+//Paginacion
 
-function Admin() {
-    const cambiarContenido = (pagina) => {
-        var contenido = document.getElementById('contenido');
+//Tabla de reservas
+import TableReservas from "../components/TableReserve";
 
-        switch (pagina) {
-            case 'habitaciones':
-                contenido.innerHTML = '<p>Contenido de Habitaciones</p>';
-                break;
-            case 'usuarios':
-                contenido.innerHTML = '<p>Contenido de Usuarios</p>';
-                break;
-            case 'reservas':
-                contenido.innerHTML = '<p>Contenido de Reservas</p>';
-                break;
-            default:
-                contenido.innerHTML = '<p>Selecciona una pestaña para ver el contenido.</p>';
-                break;
-        }
-    };
+//Funcion traer reservas
+import { getReservas } from "../helpers/ReserveApi";
 
-    return (
-        <div className="contenedor_body">
-            <div className="contenedor_header">
-                <h1>Panel de Administración</h1>
-            </div>
+const AdminScreen = () => {
+  //reservas
+  const [reservas, setReservas] = useState([]);
+  //Total de reservas
+  const [totalReservas, setTotalReservas] = useState(0);
 
-            <div className="opciones">
-                <button onClick={() => cambiarContenido('habitaciones')}>Habitaciones</button>
-                <button onClick={() => cambiarContenido('usuarios')}>Usuarios</button>
-                <button onClick={() => cambiarContenido('reservas')}>Reservas</button>
-            </div>
+  //useEffect q renderiza la tabla con los reservas
+  useEffect(() => {
+    traerReservas();
+  }, [reservas]);
 
-            <section id="contenido">
-                <p>Selecciona una pestaña para ver el contenido.</p>
-            </section>
+  //Funcion asincronica
+  const traerReservas = async () => {
+    const { reservas, total } = await getReservas();
+    setReservas(reservas);
+    setTotalReservas(total);
+  };
+
+  return (
+    <div className="bg-dark">
+      <div className="container bg-light vh-100">
+        <div className="row  py-5">
+          <div className="col text-center ">
+            <h1>
+              <span>
+                <i className="fa fa-cogs" aria-hidden="true"></i>{" "}
+              </span>
+              Panel administrador de Reservas
+            </h1>
+          </div>
         </div>
-    );
-}
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            {/* Tabla de reservas */}
+            {reservas.length > 0 ? (
+              <>
+                <h4>Total de reservas: {totalReservas}</h4>
+                <TableReservas reservas={reservas} traerReservas={traerReservas} />
+              </>
+            ) : (
+              <div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Admin;
+export default AdminScreen;
