@@ -1,5 +1,5 @@
 // reservaApi.js
-const url = "https://localhost:8080/api/reservas/";
+const url = "https://backend-vesubio.onrender.com/api/reservas/";
 const token = JSON.parse(localStorage.getItem("token"));
 
 export const obtenerReservas = async () => {
