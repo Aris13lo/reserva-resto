@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/HomeScreen';
+import '../css/HomeScreen.css';
 import header from '../assets/header.jpg';
 import hero from '../assets/hero.jpg';
 
