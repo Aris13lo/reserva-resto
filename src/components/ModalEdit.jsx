@@ -1,9 +1,6 @@
-
-
-
 import React, { useEffect, useState } from "react";
 //funcion de reservas by id y actualizars
-import { getReservaById, actualizarReserva } from "../helpers/ReserveApi";
+import { obtenerReservaPorId, actualizarReserva } from "../helpers/reservaApi";
 //fucnion de categorias
 import { getCategorias } from "../helpers/categoriaApi";
 
@@ -28,7 +25,7 @@ const ModalEdit = ({ show, handleClose, cid }) => {
   }, []);
 
   const traerDatosDeReserva = async () => {
-    const resp = await getReservaById(cid);
+    const resp = await obtenerReservaPorId(cid);
 
     setReserva(resp.reserva);
   };
@@ -77,7 +74,7 @@ const ModalEdit = ({ show, handleClose, cid }) => {
   };
 
   return (
-    <>
+    <React.StrictMode>
       {/* la funcion show es propia del modal y le pasamos show desde TableReserve */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -153,7 +150,7 @@ const ModalEdit = ({ show, handleClose, cid }) => {
           )}
         </Modal.Body>
       </Modal>
-    </>
+    </React.StrictMode>
   );
 };
 

@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api/categorias";
+const url = "http://backend-vesubio.onrender.com/api/categorias";
 const token = JSON.parse(localStorage.getItem("token"));
 const limite = 6;
 

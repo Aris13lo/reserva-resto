@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import TableReservas from "../components/TableReserve";
 
 //Funcion traer reservas
-import { getReservas } from "../helpers/ReserveApi";
+import { obtenerReservas } from "../helpers/reservaApi";
 
 const AdminScreen = () => {
   //reservas
@@ -22,12 +22,13 @@ const AdminScreen = () => {
 
   //Funcion asincronica
   const traerReservas = async () => {
-    const { reservas, total } = await getReservas();
+    const { reservas, total } = await obtenerReservas();
     setReservas(reservas);
     setTotalReservas(total);
   };
 
   return (
+    <React.StrictMode>
     <div className="bg-dark">
       <div className="container bg-light vh-100">
         <div className="row  py-5">
@@ -59,7 +60,7 @@ const AdminScreen = () => {
         </div>
       </div>
     </div>
+  </React.StrictMode>
   );
-};
-
+}
 export default AdminScreen;
