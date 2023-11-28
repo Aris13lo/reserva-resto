@@ -9,7 +9,7 @@ function HomeScreen() {
       <div className="hero-img">
         <img src={hero} alt="" />
       </div>
-      <div className="container">
+      <div className="containerHome">
         <div className="cols">
           <div className="col col-left">
             <div className="copy">

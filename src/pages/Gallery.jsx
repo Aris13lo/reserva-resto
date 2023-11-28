@@ -59,7 +59,7 @@ const Galeria = () => {
   return (
     <div>
       <h1>Nuestras Instalaciones</h1>
-      <div className="container">
+      <div className="containerGallery">
         <div className="indicator"></div>
         <div className="gallery" onMouseMove={manejarMouseMove}>
           {itemsGaleria.map((item, indice) => (
